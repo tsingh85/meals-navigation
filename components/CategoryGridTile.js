@@ -10,7 +10,7 @@ import {
 const { width } = Dimensions.get('window');
 const itemWidth = (width - 62) / 2; // 48 = (16 margin * 2) * 2 items + 16 spacing between
 
-function CategoryGridTile({ title, color }) {
+function CategoryGridTile({ title, color, onPress }) {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -18,6 +18,7 @@ function CategoryGridTile({ title, color }) {
           styles.button,
           pressed && styles.buttonPressed,
         ]}
+        onPress={onPress}
       >
         <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>{title}</Text>
